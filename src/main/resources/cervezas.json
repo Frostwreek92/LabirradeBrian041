@@ -1,0 +1,61 @@
+[
+{
+  "_id": {
+    "$oid": "69309a24751e00e5ab2ff589"
+  },
+  "idCerveza": 1,
+  "nombre": "Guinness",
+  "graduacion": 5.6,
+  "tipo": "Stout",
+  "color": "Rubi oscuro",
+  "origen": "Dublin - Irlanda",
+  "puntuacion": 8.7
+},
+{
+  "_id": {
+    "$oid": "69309a24751e00e5ab2ff58a"
+  },
+  "idCerveza": 2,
+  "nombre": "Voll Damm",
+  "graduacion": 7.2,
+  "tipo": "Marzenbier",
+  "color": "Roble",
+  "origen": "Barcelona - España",
+  "puntuacion": 7.3
+},
+{
+  "_id": {
+    "$oid": "69309a24751e00e5ab2ff58b"
+  },
+  "idCerveza": 3,
+  "nombre": "Franziskaner",
+  "graduacion": 5,
+  "tipo": "Weissbier",
+  "color": "Anaranjado",
+  "origen": "Alemania",
+  "puntuacion": 6.5
+},
+{
+  "_id": {
+    "$oid": "69309a24751e00e5ab2ff58c"
+  },
+  "idCerveza": 4,
+  "nombre": "Heineken",
+  "graduacion": 5,
+  "tipo": "Pale lager",
+  "color": "Verde",
+  "origen": "Paises Bajos",
+  "puntuacion": 3.2
+},
+{
+  "_id": {
+    "$oid": "69309a24751e00e5ab2ff58d"
+  },
+  "idCerveza": 5,
+  "nombre": "Budweiser",
+  "graduacion": 4.8,
+  "tipo": "Lager",
+  "color": "Dorado palido",
+  "origen": "America",
+  "puntuacion": 2.1
+}]
