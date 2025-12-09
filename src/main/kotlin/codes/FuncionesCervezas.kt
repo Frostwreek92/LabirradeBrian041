@@ -7,7 +7,6 @@ import com.mongodb.client.model.Projections
 import com.mongodb.client.model.Sorts
 import com.mongodb.client.model.Updates
 import org.bson.Document
-import org.example.coleccionCervezas
 
 class FuncionesCervezas {
     fun mostrarCervezas() {

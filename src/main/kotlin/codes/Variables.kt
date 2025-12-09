@@ -5,18 +5,18 @@ class Variables {
     val titulo = "La Birra de Brian: La Caída"
     val rutaJSON = "src/main/resources/LaBirradeBrian_cervezas.json"
     val menuInicial = "\n" + """Menu principal:
-    1. CRUD
+    1. CRUD Cervezas
     2. Consultas Adicionales
     0. Salir
 Introduce una opción entre 0 y 4 por favor: """.trimIndent()
-    val menuCRUD = "\n" + """Menu CRUD:
+    val menuCRUDCervezas = "\n" + """Menu CRUD Cervezas:
     1. Ver Información de las Cervezas
     2. Insertar una nueva Cerveza
     3. Modificar Cerveza por ID introducido
     4. Eliminar Cerveza por ID introducido
     0. Volver
 Introduce una opción entre 0 y 4 por favor:  """.trimIndent()
-    val menuConsultasAdicionales = "\n" + """Menu Consultas Adicionales
+    val menuConsultasAdicionalesCervezas = "\n" + """Menu Consultas Adicionales Cervezas
     1. Consultas con Filtros
     2. Consulta con Proyecciones
     3. Calcular Promedio Graduación
@@ -25,8 +25,8 @@ Introduce una opción entre 0 y 4 por favor:  """.trimIndent()
     0. Volver
 Introduce una opción entre 0 y 5 por favor:  """.trimIndent()
     var salirMenuInicial = false
-    var salirMenuCRUD = false
-    var salirConsultasAdicionales = false
+    var salirMenuCRUDCervezas = false
+    var salirConsultasAdicionalesCervezas = false
     val finPrograma = "\nFin de programa"
     val menuEdicionCerveza = "\n" + """¿Qué deseas modificar?
     1. Nombre

@@ -1,7 +1,7 @@
 [
 {
   "_id": {
-    "$oid": "69383cf9deeaad158f384bbe"
+    "$oid": "693844d75390e718485e7a8b"
   },
   "tipo": "Stout",
   "idCerveza": 1,
@@ -13,7 +13,7 @@
 },
 {
   "_id": {
-    "$oid": "69383cf9deeaad158f384bbf"
+    "$oid": "693844d75390e718485e7a8c"
   },
   "tipo": "Marzenbier",
   "idCerveza": 2,
@@ -25,7 +25,7 @@
 },
 {
   "_id": {
-    "$oid": "69383cf9deeaad158f384bc0"
+    "$oid": "693844d75390e718485e7a8d"
   },
   "tipo": "Weissbier",
   "idCerveza": 3,
@@ -37,7 +37,7 @@
 },
 {
   "_id": {
-    "$oid": "69383cf9deeaad158f384bc1"
+    "$oid": "693844d75390e718485e7a8e"
   },
   "tipo": "Pale lager",
   "idCerveza": 4,
@@ -49,7 +49,7 @@
 },
 {
   "_id": {
-    "$oid": "69383cf9deeaad158f384bc2"
+    "$oid": "693844d75390e718485e7a8f"
   },
   "tipo": "Lager",
   "idCerveza": 5,
