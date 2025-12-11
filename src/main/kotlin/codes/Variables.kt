@@ -7,7 +7,7 @@ class Variables {
     1. CRUD Cervezas
     2. Consultas Adicionales de Cervezas
     0. Salir
-Introduce una opción entre 0 y 4 por favor: """.trimIndent()
+Introduce una opción entre 0 y 2 por favor: """.trimIndent()
     var salirMenuInicial = false
     val finPrograma = "\nFin de programa"
 }
