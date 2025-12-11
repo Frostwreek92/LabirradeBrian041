@@ -1,4 +1,4 @@
-package org.example.codes
+package org.example.codes.cerveza
 
 import com.mongodb.client.model.Accumulators
 import com.mongodb.client.model.Aggregates
@@ -7,10 +7,11 @@ import com.mongodb.client.model.Projections
 import com.mongodb.client.model.Sorts
 import com.mongodb.client.model.Updates
 import org.bson.Document
+import org.example.codes.coleccionCervezas
+import org.example.codes.funcionesExtra
 
 class FuncionesCervezas {
     fun mostrarCervezas() {
-        println();
         println("\n=== Listado Cervezas ===")
         coleccionCervezas.find().forEach { doc ->
             val id = doc.getInteger("idCerveza")
@@ -55,8 +56,8 @@ class FuncionesCervezas {
             return
         }
         println("Cerveza seleccionada: ${doc.getString("nombre")}")
-        val opcion = funcionesExtra.leerDato(variables.menuEdicionCerveza, Int::class.java)
-        if (opcion == null || opcion !in 0..6) {
+        val opcion = funcionesExtra.leerDato(variablesCerveza.menuEdicionCerveza, Int::class.java)
+        if (opcion !in 0..6) {
             println("Opción no válida.")
             return
         }
@@ -91,8 +92,8 @@ class FuncionesCervezas {
             return
         }
         val nombre = doc.getString("nombre")
-        print("El nombre de la cerveza con ID $idCerveza es '$nombre'. ¿Quieres eliminarla? (s/n): ")
-        val respuesta = readLine()?.lowercase()
+        print("El nombre de la cerveza con ID $idCerveza es '$nombre'.")
+        val respuesta = funcionesExtra.leerDato("¿Quieres eliminarla? (s/n): ", String::class.java).lowercase()
         if (respuesta != "s") {
             println("Eliminación cancelada.")
             return
@@ -126,14 +127,14 @@ class FuncionesCervezas {
     }
     fun calcularPromedioGraduacion() {
         val promedio = coleccionCervezas.aggregate(
-            listOf(Aggregates.group(null, Accumulators.avg("promedio", "\$graduacion")))
+            listOf(Aggregates.group(null, Accumulators.avg("promedio", $$"$graduacion")))
         ).first()
         println("\nPromedio de graduación de todas las cervezas: ${promedio?.getDouble("promedio")}")
     }
     fun promedioPuntuacionPorTipo() {
         println("\n=== Promedio de puntuación por tipo de cerveza ===")
         val promedioPorTipo = coleccionCervezas.aggregate(
-            listOf(Aggregates.group("\$tipo", Accumulators.avg("promedioPuntuacion", "\$puntuacion")))
+            listOf(Aggregates.group($$"$tipo", Accumulators.avg("promedioPuntuacion", $$"$puntuacion")))
         )
         for (doc in promedioPorTipo) {
             println("Tipo: ${doc.getString("_id")} - Promedio: ${doc.getDouble("promedioPuntuacion")}")

@@ -9,6 +9,8 @@ import de.bwaldvogel.mongo.backend.memory.MemoryBackend
 import com.mongodb.client.MongoClients
 import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoCollection
+import org.example.codes.cerveza.funcionesCervezas
+import org.example.codes.cerveza.variablesCerveza
 import java.lang.Exception
 import kotlin.collections.contains
 
@@ -25,7 +27,7 @@ lateinit var coleccionCervezas: MongoCollection<Document>
 class Programa {
     fun iniciar() {
         conectarBD()
-        importarBD(variables.rutaJSON, coleccionCervezas)
+        importarBD(variablesCerveza.rutaJSON, coleccionCervezas)
         variables.titulo
         try {
             while (!variables.salirMenuInicial) {
@@ -41,23 +43,23 @@ class Programa {
             println("Excepción: $e")
         }
         variables.finPrograma
-        exportarBD(variables.rutaJSON, coleccionCervezas)
+        exportarBD(variablesCerveza.rutaJSON, coleccionCervezas)
         desconectarBD()
     }
 }
 val programa = Programa()
 
 fun menuCRUDCervezas() {
-    variables.salirMenuCRUDCervezas = false
+    variablesCerveza.salirMenuCRUDCervezas = false
     try {
-        while (!variables.salirMenuCRUDCervezas) {
-            val opcion = funcionesExtra.leerDato(variables.menuCRUDCervezas, Int::class.java)
+        while (!variablesCerveza.salirMenuCRUDCervezas) {
+            val opcion = funcionesExtra.leerDato(variablesCerveza.menuCRUDCervezas, Int::class.java)
             when (opcion) {
                 1 -> funcionesCervezas.mostrarCervezas()
                 2 -> funcionesCervezas.insertarCerveza()
                 3 -> funcionesCervezas.actualizarCerveza()
                 4 -> funcionesCervezas.eliminarCerveza()
-                0 -> variables.salirMenuCRUDCervezas = funcionesExtra.finEleccion()
+                0 -> variablesCerveza.salirMenuCRUDCervezas = funcionesExtra.finEleccion()
             }
         }
     } catch (e: Exception) {
@@ -65,17 +67,17 @@ fun menuCRUDCervezas() {
     }
 }
 fun consultasAdicionalesCervezas() {
-    variables.salirConsultasAdicionalesCervezas = false
+    variablesCerveza.salirConsultasAdicionalesCervezas = false
     try {
-        while (!variables.salirConsultasAdicionalesCervezas) {
-            val opcion = funcionesExtra.leerDato(variables.menuConsultasAdicionalesCervezas, Int::class.java)
+        while (!variablesCerveza.salirConsultasAdicionalesCervezas) {
+            val opcion = funcionesExtra.leerDato(variablesCerveza.menuConsultasAdicionalesCervezas, Int::class.java)
             when (opcion) {
                 1 -> funcionesCervezas.consultarConFiltros()
                 2 -> funcionesCervezas.consultarConProyeccion()
                 3 -> funcionesCervezas.calcularPromedioGraduacion()
                 4 -> funcionesCervezas.promedioPuntuacionPorTipo()
                 5 -> funcionesCervezas.top3Cervezas()
-                0 -> variables.salirConsultasAdicionalesCervezas = funcionesExtra.finEleccion()
+                0 -> variablesCerveza.salirConsultasAdicionalesCervezas = funcionesExtra.finEleccion()
             }
         }
     } catch (e: Exception) {
