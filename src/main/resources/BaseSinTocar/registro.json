@@ -1,0 +1,14 @@
+[
+{
+  "_id": {
+    "$oid": "6940585f7566407b9c55e39c"
+  },
+  "idRegistro": 1,
+  "idCerveza": 1,
+  "cantidadCerveza": 6,
+  "idTapa": "",
+  "cantidadTapa": "",
+  "idProveedor": 1,
+  "sumaResta": "Suma",
+  "fechaDia": "2025-10-31 17:46:17"
+}]

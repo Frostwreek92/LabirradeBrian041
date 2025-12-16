@@ -1,0 +1,43 @@
+[
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f375"
+  },
+  "nombreProveedor": "Cruzcampo",
+  "idProveedor": 1
+},
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f376"
+  },
+  "nombreProveedor": "Cervezas del Norte",
+  "idProveedor": 2
+},
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f377"
+  },
+  "nombreProveedor": "Lúpulo Dorado",
+  "idProveedor": 3
+},
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f378"
+  },
+  "nombreProveedor": "Malta Suprema",
+  "idProveedor": 4
+},
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f379"
+  },
+  "nombreProveedor": "La Espuma Artesanal",
+  "idProveedor": 5
+},
+{
+  "_id": {
+    "$oid": "694057ba9b06670d07d4f37a"
+  },
+  "nombreProveedor": "Barril & Trigo",
+  "idProveedor": 6
+}]

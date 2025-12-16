@@ -1,7 +1,7 @@
 package org.example.codes.cerveza
 
 class VariablesCerveza {
-    val rutaJSON = "src/main/resources/LaBirradeBrian_cervezas.json"
+    val rutaJSONCervezas = "src/main/resources/LaBirradeBrian_cervezas.json"
     val menuCRUDCervezas = "\n" + """Menu CRUD Cervezas:
     1. Ver Información de las Cervezas
     2. Insertar una nueva Cerveza

@@ -11,23 +11,28 @@ import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoCollection
 import org.example.codes.cerveza.funcionesCervezas
 import org.example.codes.cerveza.variablesCerveza
+import org.example.codes.tapas.funcionesTapas
+import org.example.codes.tapas.variablesTapa
 import java.lang.Exception
 import kotlin.collections.contains
 
 //BD y colección con la que se trabajará
 const val NOM_BD = "LaBirradeBrian"
-const val NOM_COLECCION = "cervezas"
+const val NOM_COLECCIONCERVEZAS = "cervezas"
+const val NOM_COLECCIONTAPAS = "tapas"
 
 //variables globales definidas sin inicializar
 lateinit var servidor: MongoServer
 lateinit var cliente: MongoClient
 lateinit var uri: String
 lateinit var coleccionCervezas: MongoCollection<Document>
+lateinit var coleccionTapas: MongoCollection<Document>
 
 class Programa {
     fun iniciar() {
         conectarBD()
-        importarBD(variablesCerveza.rutaJSON, coleccionCervezas)
+        importarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
+        importarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
         variables.titulo
         try {
             while (!variables.salirMenuInicial) {
@@ -35,6 +40,8 @@ class Programa {
                 when (opcion) {
                     1 -> menuCRUDCervezas()
                     2 -> consultasAdicionalesCervezas()
+                    3 -> menuCrudTapas()
+                    4 -> consultasAdicionalesTapas()
                     0 -> variables.salirMenuInicial = funcionesExtra.finEleccion()
                     else -> println("Introduce una de las opciones")
                 }
@@ -43,7 +50,8 @@ class Programa {
             println("Excepción: $e")
         }
         variables.finPrograma
-        exportarBD(variablesCerveza.rutaJSON, coleccionCervezas)
+        exportarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
+        exportarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
         desconectarBD()
     }
 }
@@ -84,6 +92,26 @@ fun consultasAdicionalesCervezas() {
         println("Excepción: $e")
     }
 }
+fun menuCrudTapas() {
+    variablesTapa.salirMenuCRUDTapas = false
+    try {
+        while (!variablesTapa.salirMenuCRUDTapas) {
+            val opcion = funcionesExtra.leerDato(variablesTapa.menuCRUDTapas, Int::class.java)
+            when (opcion) {
+                1 -> funcionesTapas.mostrarTapas()
+                2 -> funcionesTapas.insertarTapa()
+                3 -> funcionesTapas.actualizarTapa()
+                4 -> funcionesTapas.eliminarTapa()
+                0 -> variablesTapa.salirMenuCRUDTapas = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepcion: $e")
+    }
+}
+fun consultasAdicionalesTapas() {
+    println("Consultas Adicionales Tapas")
+}
 
 // Función para conectar a la BD
 fun conectarBD() {
@@ -91,9 +119,14 @@ fun conectarBD() {
     val address = servidor.bind()
     uri = "mongodb://${address.hostName}:${address.port}"
     cliente = MongoClients.create(uri)
-    coleccionCervezas = cliente.getDatabase(NOM_BD).getCollection(NOM_COLECCION)
-    println("Servidor MongoDB en memoria iniciado en $uri")
+
+    val db = cliente.getDatabase(NOM_BD)
+    coleccionCervezas = db.getCollection(NOM_COLECCIONCERVEZAS)
+    coleccionTapas = db.getCollection(NOM_COLECCIONTAPAS)
+
+    println("Servidor MongoDB iniciado en $uri")
 }
+
 // Importar BD
 fun importarBD(rutaJSON: String, coleccion: MongoCollection<Document>) {
     println("Iniciando importación de datos desde JSON...")

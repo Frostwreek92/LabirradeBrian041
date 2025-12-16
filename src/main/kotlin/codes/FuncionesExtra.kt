@@ -11,7 +11,7 @@ class FuncionesExtra {
     }
     /* Función para ahorrar líneas que se parece a Python al pedir datos
     * En la que puedes escribir un mensaje a mostrar*/
-    fun input(mensaje: String): String? {
+    private fun input(mensaje: String): String? {
         print(mensaje)
         return readlnOrNull()
     }
