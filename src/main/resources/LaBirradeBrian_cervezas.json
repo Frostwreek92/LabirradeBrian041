@@ -1,9 +1,10 @@
 [
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843a8"
+    "$oid": "694138d33ee32f0254685eab"
   },
   "tipo": "Stout",
+  "precio": 5.5,
   "idCerveza": 1,
   "color": "Rubi oscuro",
   "puntuacion": 8.7,
@@ -13,9 +14,10 @@
 },
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843a9"
+    "$oid": "694138d33ee32f0254685eac"
   },
   "tipo": "Marzenbier",
+  "precio": 5.5,
   "idCerveza": 2,
   "color": "Roble",
   "puntuacion": 7.3,
@@ -25,9 +27,10 @@
 },
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843aa"
+    "$oid": "694138d33ee32f0254685ead"
   },
   "tipo": "Weissbier",
+  "precio": 5.5,
   "idCerveza": 3,
   "color": "Anaranjado",
   "puntuacion": 6.5,
@@ -37,9 +40,10 @@
 },
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843ab"
+    "$oid": "694138d33ee32f0254685eae"
   },
   "tipo": "Pale Lager",
+  "precio": 5.5,
   "idCerveza": 4,
   "color": "Verde",
   "puntuacion": 3.2,
@@ -49,9 +53,10 @@
 },
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843ac"
+    "$oid": "694138d33ee32f0254685eaf"
   },
   "tipo": "Lager",
+  "precio": 5.5,
   "idCerveza": 5,
   "color": "Dorado pálido",
   "puntuacion": 2.1,

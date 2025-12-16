@@ -21,7 +21,15 @@ class FuncionesCervezas {
             val color = doc.getString("color")
             val origen = doc.getString("origen")
             val puntuacion = doc.get("puntuacion", Number::class.java).toDouble()
-            println("ID: $id - Nombre: $nombre - Graduación: $graduacion - Tipo: $tipo - Color: $color - Origen: $origen - Puntuación: $puntuacion")
+            val precio = doc.get("precio", Number::class.java).toDouble()
+            println("ID: $id " +
+                    "- Nombre: $nombre " +
+                    "- Graduación: $graduacion " +
+                    "- Tipo: $tipo " +
+                    "- Color: $color " +
+                    "- Origen: $origen " +
+                    "- Puntuación: $puntuacion " +
+                    "- Precio: $precio$")
         }
     }
     fun insertarCerveza() {
@@ -35,6 +43,7 @@ class FuncionesCervezas {
         val color = funcionesExtra.leerDato("Introduce el color: ", String::class.java)
         val origen = funcionesExtra.leerDato("Introduce el origen: ", String::class.java)
         val puntuacion = funcionesExtra.leerDato("Introduce la puntuación: ", Double::class.java)
+        val precio = funcionesExtra.leerDato("Introduce precio: ", Double::class.java)
         val nuevaCerveza = Document()
             .append("idCerveza", maxId + 1)
             .append("nombre", nombre)
@@ -43,6 +52,7 @@ class FuncionesCervezas {
             .append("color", color)
             .append("origen", origen)
             .append("puntuacion", puntuacion)
+            .append("precio", precio)
         coleccionCervezas.insertOne(nuevaCerveza)
         println("Cerveza '$nombre' añadida correctamente con ID ${maxId + 1}.")
     }
@@ -57,7 +67,7 @@ class FuncionesCervezas {
         }
         println("Cerveza seleccionada: ${doc.getString("nombre")}")
         val opcion = funcionesExtra.leerDato(variablesCerveza.menuEdicionCerveza, Int::class.java)
-        if (opcion !in 0..6) {
+        if (opcion !in 0..7) {
             println("Opción no válida.")
             return
         }
@@ -72,6 +82,7 @@ class FuncionesCervezas {
             4 -> Updates.set("color", funcionesExtra.leerDato("Nuevo color: ", String::class.java))
             5 -> Updates.set("origen", funcionesExtra.leerDato("Nuevo origen: ", String::class.java))
             6 -> Updates.set("puntuacion", funcionesExtra.leerDato("Nueva graduación: ", Double::class.java))
+            7 -> Updates.set("precio", funcionesExtra.leerDato("Nueva precio: ", Double::class.java))
             else -> null
         }
         if (update != null) {

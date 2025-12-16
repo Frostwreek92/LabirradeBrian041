@@ -1,7 +1,7 @@
 [
 {
   "_id": {
-    "$oid": "69412ad3ecabdf52ab1843ad"
+    "$oid": "694138d33ee32f0254685eb0"
   },
   "cantidadTapa": 3,
   "nombreTapa": "Tortilla Española",
@@ -10,37 +10,37 @@
 },
 {
   "_id": {
-    "$oid": "69412aececabdf52ab1843ae"
+    "$oid": "694138d33ee32f0254685eb1"
   },
-  "idTapa": 2,
-  "nombreTapa": "Croquetas de Jamón",
   "cantidadTapa": 9,
-  "precioTapa": 4.0
+  "nombreTapa": "Croquetas de Jamón",
+  "idTapa": 2,
+  "precioTapa": 4
 },
 {
   "_id": {
-    "$oid": "69412afdecabdf52ab1843af"
+    "$oid": "694138d33ee32f0254685eb2"
   },
-  "idTapa": 3,
-  "nombreTapa": "Patatas Bravas",
   "cantidadTapa": 3,
+  "nombreTapa": "Patatas Bravas",
+  "idTapa": 3,
   "precioTapa": 3.5
 },
 {
   "_id": {
-    "$oid": "69412b0eecabdf52ab1843b0"
+    "$oid": "694138d33ee32f0254685eb3"
   },
-  "idTapa": 4,
-  "nombreTapa": "Calamares a la Romana",
   "cantidadTapa": 8,
+  "nombreTapa": "Calamares a la Romana",
+  "idTapa": 4,
   "precioTapa": 5.5
 },
 {
   "_id": {
-    "$oid": "69412b1fecabdf52ab1843b1"
+    "$oid": "694138d33ee32f0254685eb4"
   },
-  "idTapa": 5,
-  "nombreTapa": "Pimientos de Padrón",
   "cantidadTapa": 4,
+  "nombreTapa": "Pimientos de Padrón",
+  "idTapa": 5,
   "precioTapa": 3.8
 }]

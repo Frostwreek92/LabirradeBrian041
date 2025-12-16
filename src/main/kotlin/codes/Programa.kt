@@ -11,6 +11,7 @@ import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoCollection
 import org.example.codes.cerveza.funcionesCervezas
 import org.example.codes.cerveza.variablesCerveza
+import org.example.codes.proveedores.variablesProveedores
 import org.example.codes.tapas.funcionesTapas
 import org.example.codes.tapas.variablesTapa
 import java.lang.Exception
@@ -20,6 +21,7 @@ import kotlin.collections.contains
 const val NOM_BD = "LaBirradeBrian"
 const val NOM_COLECCIONCERVEZAS = "cervezas"
 const val NOM_COLECCIONTAPAS = "tapas"
+const val NOM_COLECCIONPROVEEDORES = "proveedores"
 
 //variables globales definidas sin inicializar
 lateinit var servidor: MongoServer
@@ -27,12 +29,14 @@ lateinit var cliente: MongoClient
 lateinit var uri: String
 lateinit var coleccionCervezas: MongoCollection<Document>
 lateinit var coleccionTapas: MongoCollection<Document>
+lateinit var coleccionProveedores: MongoCollection<Document>
 
 class Programa {
     fun iniciar() {
         conectarBD()
         importarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
         importarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
+        importarBD(variablesProveedores.rutaJSONProveedores, coleccionProveedores)
         variables.titulo
         try {
             while (!variables.salirMenuInicial) {
@@ -41,7 +45,7 @@ class Programa {
                     1 -> menuCRUDCervezas()
                     2 -> consultasAdicionalesCervezas()
                     3 -> menuCrudTapas()
-                    4 -> consultasAdicionalesTapas()
+                    4 -> menuCRUDProveedores()
                     0 -> variables.salirMenuInicial = funcionesExtra.finEleccion()
                     else -> println("Introduce una de las opciones")
                 }
@@ -109,8 +113,8 @@ fun menuCrudTapas() {
         println("Excepcion: $e")
     }
 }
-fun consultasAdicionalesTapas() {
-    println("Consultas Adicionales Tapas")
+fun menuCRUDProveedores() {
+    println("Menu Crud Proveedores")
 }
 
 // Función para conectar a la BD
@@ -123,10 +127,10 @@ fun conectarBD() {
     val db = cliente.getDatabase(NOM_BD)
     coleccionCervezas = db.getCollection(NOM_COLECCIONCERVEZAS)
     coleccionTapas = db.getCollection(NOM_COLECCIONTAPAS)
+    coleccionProveedores = db.getCollection(NOM_COLECCIONPROVEEDORES)
 
     println("Servidor MongoDB iniciado en $uri")
 }
-
 // Importar BD
 fun importarBD(rutaJSON: String, coleccion: MongoCollection<Document>) {
     println("Iniciando importación de datos desde JSON...")

@@ -9,7 +9,8 @@
   "tipo": "Stout",
   "color": "Rubi oscuro",
   "origen": "Dublin - Irlanda",
-  "puntuacion": 8.7
+  "puntuacion": 8.7,
+  "precio": 5.5
 },
 {
   "_id": {
@@ -21,7 +22,8 @@
   "tipo": "Marzenbier",
   "color": "Roble",
   "origen": "Barcelona - España",
-  "puntuacion": 7.3
+  "puntuacion": 7.3,
+  "precio": 5.5
 },
 {
   "_id": {
@@ -33,7 +35,8 @@
   "tipo": "Weissbier",
   "color": "Anaranjado",
   "origen": "Alemania",
-  "puntuacion": 6.5
+  "puntuacion": 6.5,
+  "precio": 5.5
 },
 {
   "_id": {
@@ -45,7 +48,8 @@
   "tipo": "Pale lager",
   "color": "Verde",
   "origen": "Paises Bajos",
-  "puntuacion": 3.2
+  "puntuacion": 3.2,
+  "precio": 5.5
 },
 {
   "_id": {
@@ -57,5 +61,6 @@
   "tipo": "Lager",
   "color": "Dorado palido",
   "origen": "America",
-  "puntuacion": 2.1
+  "puntuacion": 2.1,
+  "precio": 5.5
 }]
