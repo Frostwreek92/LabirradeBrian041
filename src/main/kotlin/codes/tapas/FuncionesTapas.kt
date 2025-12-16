@@ -1,10 +1,5 @@
 package org.example.codes.tapas
 
-import com.mongodb.client.model.Accumulators
-import com.mongodb.client.model.Aggregates
-import com.mongodb.client.model.Filters
-import com.mongodb.client.model.Projections
-import com.mongodb.client.model.Sorts
 import com.mongodb.client.model.Updates
 import org.example.codes.coleccionTapas
 import org.bson.Document
