@@ -18,7 +18,10 @@ class FuncionesTapas{
             val nombre = doc.getString("nombreTapa")
             val cantidadTapa = doc.getInteger("cantidadTapa")
             val precioTapa = doc.get("precioTapa", Number::class.java).toDouble()
-            println("ID: $id - Nombre: $nombre - Cantidad: $cantidadTapa - Precio: $precioTapa")
+            println("ID: $id " +
+                    "- Nombre: $nombre " +
+                    "- Cantidad: $cantidadTapa " +
+                    "- Precio: $precioTapa")
         }
     }
     fun insertarTapa() {

@@ -44,7 +44,7 @@ class Programa {
                 when (opcion) {
                     1 -> menuCRUDCervezas()
                     2 -> consultasAdicionalesCervezas()
-                    3 -> menuCrudTapas()
+                    3 -> menuCRUDTapas()
                     4 -> menuCRUDProveedores()
                     0 -> variables.salirMenuInicial = funcionesExtra.finEleccion()
                     else -> println("Introduce una de las opciones")
@@ -78,25 +78,7 @@ fun menuCRUDCervezas() {
         println("Excepción: $e")
     }
 }
-fun consultasAdicionalesCervezas() {
-    variablesCerveza.salirConsultasAdicionalesCervezas = false
-    try {
-        while (!variablesCerveza.salirConsultasAdicionalesCervezas) {
-            val opcion = funcionesExtra.leerDato(variablesCerveza.menuConsultasAdicionalesCervezas, Int::class.java)
-            when (opcion) {
-                1 -> funcionesCervezas.consultarConFiltros()
-                2 -> funcionesCervezas.consultarConProyeccion()
-                3 -> funcionesCervezas.calcularPromedioGraduacion()
-                4 -> funcionesCervezas.promedioPuntuacionPorTipo()
-                5 -> funcionesCervezas.top3Cervezas()
-                0 -> variablesCerveza.salirConsultasAdicionalesCervezas = funcionesExtra.finEleccion()
-            }
-        }
-    } catch (e: Exception) {
-        println("Excepción: $e")
-    }
-}
-fun menuCrudTapas() {
+fun menuCRUDTapas() {
     variablesTapa.salirMenuCRUDTapas = false
     try {
         while (!variablesTapa.salirMenuCRUDTapas) {
@@ -115,6 +97,24 @@ fun menuCrudTapas() {
 }
 fun menuCRUDProveedores() {
     println("Menu Crud Proveedores")
+}
+fun consultasAdicionalesCervezas() {
+    variablesCerveza.salirConsultasAdicionalesCervezas = false
+    try {
+        while (!variablesCerveza.salirConsultasAdicionalesCervezas) {
+            val opcion = funcionesExtra.leerDato(variablesCerveza.menuConsultasAdicionalesCervezas, Int::class.java)
+            when (opcion) {
+                1 -> funcionesCervezas.consultarConFiltros()
+                2 -> funcionesCervezas.consultarConProyeccion()
+                3 -> funcionesCervezas.calcularPromedioGraduacion()
+                4 -> funcionesCervezas.promedioPuntuacionPorTipo()
+                5 -> funcionesCervezas.top3Cervezas()
+                0 -> variablesCerveza.salirConsultasAdicionalesCervezas = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepción: $e")
+    }
 }
 
 // Función para conectar a la BD
