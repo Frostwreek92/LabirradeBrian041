@@ -1,7 +1,7 @@
 [
 {
   "_id": {
-    "$oid": "694124ee0297315f11d95269"
+    "$oid": "69412ad3ecabdf52ab1843a8"
   },
   "tipo": "Stout",
   "idCerveza": 1,
@@ -13,7 +13,7 @@
 },
 {
   "_id": {
-    "$oid": "694124ee0297315f11d9526a"
+    "$oid": "69412ad3ecabdf52ab1843a9"
   },
   "tipo": "Marzenbier",
   "idCerveza": 2,
@@ -25,7 +25,7 @@
 },
 {
   "_id": {
-    "$oid": "694124ee0297315f11d9526b"
+    "$oid": "69412ad3ecabdf52ab1843aa"
   },
   "tipo": "Weissbier",
   "idCerveza": 3,
@@ -33,13 +33,13 @@
   "puntuacion": 6.5,
   "origen": "Alemania",
   "graduacion": 5,
-  "nombre": "Franziskaner"
+  "nombre": "Kranziskaner"
 },
 {
   "_id": {
-    "$oid": "694124ee0297315f11d9526c"
+    "$oid": "69412ad3ecabdf52ab1843ab"
   },
-  "tipo": "Pale lager",
+  "tipo": "Pale Lager",
   "idCerveza": 4,
   "color": "Verde",
   "puntuacion": 3.2,
@@ -49,11 +49,11 @@
 },
 {
   "_id": {
-    "$oid": "694124ee0297315f11d9526d"
+    "$oid": "69412ad3ecabdf52ab1843ac"
   },
   "tipo": "Lager",
   "idCerveza": 5,
-  "color": "Dorado palido",
+  "color": "Dorado pálido",
   "puntuacion": 2.1,
   "origen": "America",
   "graduacion": 4.8,
