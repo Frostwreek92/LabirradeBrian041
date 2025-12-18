@@ -11,7 +11,9 @@ import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoCollection
 import org.example.codes.cerveza.funcionesCervezas
 import org.example.codes.cerveza.variablesCerveza
+import org.example.codes.proveedores.funcionesProveedores
 import org.example.codes.proveedores.variablesProveedores
+import org.example.codes.registro.variablesRegistro
 import org.example.codes.tapas.funcionesTapas
 import org.example.codes.tapas.variablesTapa
 import java.lang.Exception
@@ -22,6 +24,7 @@ const val NOM_BD = "LaBirradeBrian"
 const val NOM_COLECCIONCERVEZAS = "cervezas"
 const val NOM_COLECCIONTAPAS = "tapas"
 const val NOM_COLECCIONPROVEEDORES = "proveedores"
+const val NOM_COLECCIONREGISTRO = "registro"
 
 //variables globales definidas sin inicializar
 lateinit var servidor: MongoServer
@@ -30,22 +33,19 @@ lateinit var uri: String
 lateinit var coleccionCervezas: MongoCollection<Document>
 lateinit var coleccionTapas: MongoCollection<Document>
 lateinit var coleccionProveedores: MongoCollection<Document>
+lateinit var coleccionRegistro: MongoCollection<Document>
 
 class Programa {
     fun iniciar() {
         conectarBD()
-        importarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
-        importarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
-        importarBD(variablesProveedores.rutaJSONProveedores, coleccionProveedores)
+        importar()
         variables.titulo
         try {
             while (!variables.salirMenuInicial) {
                 val opcion = funcionesExtra.leerDato(variables.menuInicial, Int::class.java)
                 when (opcion) {
-                    1 -> menuCRUDCervezas()
-                    2 -> consultasAdicionalesCervezas()
-                    3 -> menuCRUDTapas()
-                    4 -> menuCRUDProveedores()
+                    1 -> menuCRUD()
+                    2 -> consultasAdicionales()
                     0 -> variables.salirMenuInicial = funcionesExtra.finEleccion()
                     else -> println("Introduce una de las opciones")
                 }
@@ -54,13 +54,28 @@ class Programa {
             println("Excepción: $e")
         }
         variables.finPrograma
-        exportarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
-        exportarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
+        exportar()
         desconectarBD()
     }
 }
 val programa = Programa()
 
+fun menuCRUD() {
+    variables.salirCRUD = false
+    try {
+        while (!variables.salirCRUD) {
+            val opcion = funcionesExtra.leerDato(variables.menuCRUD, Int::class.java)
+            when (opcion) {
+                1 -> menuCRUDCervezas()
+                2 -> menuCRUDTapas()
+                3 -> menuCRUDProveedores()
+                0 -> variables.salirCRUD = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepción: $e")
+    }
+}
 fun menuCRUDCervezas() {
     variablesCerveza.salirMenuCRUDCervezas = false
     try {
@@ -96,7 +111,37 @@ fun menuCRUDTapas() {
     }
 }
 fun menuCRUDProveedores() {
-    println("Menu Crud Proveedores")
+    variablesProveedores.salirMenuCRUDProveedor = false
+    try {
+        while (!variablesProveedores.salirMenuCRUDProveedor) {
+            val opcion = funcionesExtra.leerDato(variablesProveedores.menuCRUDProveedores, Int::class.java)
+            when (opcion) {
+                1 -> funcionesProveedores.mostrarProveedores()
+                2 -> funcionesProveedores.insertarProveedor()
+                3 -> funcionesProveedores.actualizarProveedor()
+                4 -> funcionesProveedores.eliminarProveedor()
+                0 -> variablesProveedores.salirMenuCRUDProveedor = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepcion: $e")
+    }
+}
+
+fun consultasAdicionales() {
+    variables.salirAdicionales = false
+    try {
+        while (!variables.salirAdicionales) {
+            val opcion = funcionesExtra.leerDato(variables.menuAdicionales, Int::class.java)
+            when (opcion) {
+                1 -> consultasAdicionalesCervezas()
+                2 -> consultasRegistro()
+                0 -> variables.salirAdicionales = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepcion: $e")
+    }
 }
 fun consultasAdicionalesCervezas() {
     variablesCerveza.salirConsultasAdicionalesCervezas = false
@@ -116,6 +161,9 @@ fun consultasAdicionalesCervezas() {
         println("Excepción: $e")
     }
 }
+fun consultasRegistro() {
+
+}
 
 // Función para conectar a la BD
 fun conectarBD() {
@@ -128,6 +176,7 @@ fun conectarBD() {
     coleccionCervezas = db.getCollection(NOM_COLECCIONCERVEZAS)
     coleccionTapas = db.getCollection(NOM_COLECCIONTAPAS)
     coleccionProveedores = db.getCollection(NOM_COLECCIONPROVEEDORES)
+    coleccionRegistro = db.getCollection(NOM_COLECCIONREGISTRO)
 
     println("Servidor MongoDB iniciado en $uri")
 }
@@ -202,4 +251,17 @@ fun desconectarBD() {
     cliente.close()
     servidor.shutdown()
     println("Servidor MongoDB en memoria finalizado")
+}
+
+fun importar() {
+    importarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
+    importarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
+    importarBD(variablesProveedores.rutaJSONProveedores, coleccionProveedores)
+    importarBD(variablesRegistro.rutaJSONRegistro, coleccionRegistro)
+}
+fun exportar() {
+    exportarBD(variablesCerveza.rutaJSONCervezas, coleccionCervezas)
+    exportarBD(variablesTapa.rutaJSONTapas, coleccionTapas)
+    exportarBD(variablesProveedores.rutaJSONProveedores, coleccionProveedores)
+    exportarBD(variablesRegistro.rutaJSONRegistro, coleccionRegistro)
 }
