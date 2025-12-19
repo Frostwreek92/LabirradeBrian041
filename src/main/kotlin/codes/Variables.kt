@@ -16,8 +16,7 @@ Introduce una opción entre 0 y 2 por favor: """.trimIndent()
 Introduce una de las opciones: """.trimIndent()
     val menuAdicionales = "\n" + """Menú consultas adicionales
     1. Cervezas
-    2. Tapas
-    3. Registro
+    2. Registro
     0. Volver
 Introduce una de las opciones: """.trimIndent()
     var salirMenuInicial = false

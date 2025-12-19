@@ -13,6 +13,7 @@ import org.example.codes.cerveza.funcionesCervezas
 import org.example.codes.cerveza.variablesCerveza
 import org.example.codes.proveedores.funcionesProveedores
 import org.example.codes.proveedores.variablesProveedores
+import org.example.codes.registro.funcionesRegistro
 import org.example.codes.registro.variablesRegistro
 import org.example.codes.tapas.funcionesTapas
 import org.example.codes.tapas.variablesTapa
@@ -162,7 +163,25 @@ fun consultasAdicionalesCervezas() {
     }
 }
 fun consultasRegistro() {
-
+    variablesRegistro.salirRegistro = false
+    try {
+        while (!variablesRegistro.salirRegistro) {
+            val opcion = funcionesExtra.leerDato(variablesRegistro.menuRegistro, Int::class.java)
+            when (opcion) {
+                1 -> funcionesRegistro.mostrarRegistroDetallado()
+                2 -> funcionesRegistro.sumarCervezas()
+                3 -> funcionesRegistro.restarCerveza()
+                4 -> funcionesRegistro.sumarTapa()
+                5 -> funcionesRegistro.restarTapa()
+                6 -> funcionesRegistro.sumarAmbos()
+                7 -> funcionesRegistro.restarAmbos()
+                8 -> funcionesRegistro.mostrarStockTotal()
+                0 -> variablesRegistro.salirRegistro = funcionesExtra.finEleccion()
+            }
+        }
+    } catch (e: Exception) {
+        println("Excepción: $e")
+    }
 }
 
 // Función para conectar a la BD

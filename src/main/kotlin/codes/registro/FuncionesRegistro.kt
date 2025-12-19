@@ -332,7 +332,6 @@ class FuncionesRegistro {
             println("${it.getString("nombreTapa")} → ${it.getInteger("cantidadTapa")}")
         }
     }
-
 }
 val funcionesRegistro = FuncionesRegistro()
 
@@ -340,9 +339,8 @@ private fun nuevoIdRegistro(): Int {
     return coleccionRegistro.find()
         .sort(Document("idRegistro", -1))
         .first()
-        ?.getInteger("idRegistro") ?: 0 + 1
+        ?.getInteger("idRegistro") ?: (0 + 1)
 }
 private fun fechaActual(): String {
     return java.time.LocalDate.now().toString()
 }
-
