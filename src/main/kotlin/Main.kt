@@ -5,4 +5,3 @@ import org.example.codes.programa
 fun main() {
     programa.iniciar()
 }
-

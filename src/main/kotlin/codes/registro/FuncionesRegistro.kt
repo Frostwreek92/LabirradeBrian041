@@ -70,12 +70,12 @@ class FuncionesRegistro {
             return
         }
 
-        println("================================================================================")
+        println("=======================================================================================================")
         println(String.format(
-            "%-12s %-8s %-15s %-15s %-10s %-15s",
+            "%-20s %-8s %-15s %-15s %-10s %-15s",
             "Fecha", "Tipo", "Cerveza", "Tapa", "Cantidad", "Proveedor"
         ))
-        println("--------------------------------------------------------------------------------")
+        println("-------------------------------------------------------------------------------------------------------")
 
         registros.forEach { r ->
             val fecha = r["fecha"] ?: "-"
@@ -89,15 +89,14 @@ class FuncionesRegistro {
             val proveedor = r["proveedor"] ?: "-"
 
             println(String.format(
-                "%-12s %-8s %-15s %-15s %-10s %-15s",
+                "%-20s %-8s %-15s %-15s %-10s %-15s",
                 fecha, operacion, cerveza, tapa, cantidad, proveedor
             ))
         }
 
-        println("================================================================================")
+        println("=======================================================================================================")
     }
     fun sumarCervezas() {
-        funcionesCervezas.mostrarCervezas()
         funcionesCervezas.mostrarCervezas()
         val idCerveza = funcionesExtra.leerDato("Introduce ID de la Cerveza: ", Int::class.java)
         val cantidad = funcionesExtra.leerDato("Introduce cantidad a sumar: ", Int::class.java)

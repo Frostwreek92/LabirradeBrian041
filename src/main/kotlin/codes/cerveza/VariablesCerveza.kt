@@ -27,6 +27,7 @@ Introduce una opción entre 0 y 5 por favor:  """.trimIndent()
     5. Origen
     6. Puntuación
     7. Precio
+    8. Cantidad
     0. Cancelar
 Tu opción: """.trimIndent()
 }

@@ -1,14 +1,79 @@
 [
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc261"
+    "$oid": "694539da6806af535f8ae180"
   },
-  "sumaResta": "Suma",
-  "idCerveza": 1,
-  "cantidadTapa": "",
-  "idProveedor": 1,
-  "cantidadCerveza": 6,
-  "idTapa": "",
-  "fechaDia": "2025-10-31 17:46:17",
+  "sumaResta": "SUMA",
+  "idCerveza": 5,
+  "cantidadTapa": 0,
+  "idProveedor": 5,
+  "cantidadCerveza": 2,
+  "idTapa": null,
+  "fechaDia": "2025-12-19",
   "idRegistro": 1
+},
+{
+  "_id": {
+    "$oid": "694539da6806af535f8ae181"
+  },
+  "sumaResta": "RESTA",
+  "idCerveza": 1,
+  "cantidadTapa": 0,
+  "idProveedor": null,
+  "cantidadCerveza": 2,
+  "idTapa": null,
+  "fechaDia": "2025-12-19",
+  "idRegistro": 1
+},
+{
+  "_id": {
+    "$oid": "694539da6806af535f8ae182"
+  },
+  "sumaResta": "SUMA",
+  "idCerveza": null,
+  "cantidadTapa": 5,
+  "idProveedor": null,
+  "cantidadCerveza": 0,
+  "idTapa": 3,
+  "fechaDia": "2025-12-19",
+  "idRegistro": 1
+},
+{
+  "_id": {
+    "$oid": "69453a146806af535f8ae183"
+  },
+  "idRegistro": 1,
+  "idCerveza": null,
+  "cantidadCerveza": 0,
+  "idTapa": 3,
+  "cantidadTapa": 2,
+  "idProveedor": null,
+  "sumaResta": "RESTA",
+  "fechaDia": "2025-12-19"
+},
+{
+  "_id": {
+    "$oid": "69453a446806af535f8ae184"
+  },
+  "idRegistro": 1,
+  "idCerveza": 3,
+  "cantidadCerveza": 5,
+  "idTapa": 1,
+  "cantidadTapa": 6,
+  "idProveedor": 5,
+  "sumaResta": "SUMA",
+  "fechaDia": "2025-12-19"
+},
+{
+  "_id": {
+    "$oid": "69453a826806af535f8ae185"
+  },
+  "idRegistro": 1,
+  "idCerveza": 1,
+  "cantidadCerveza": 2,
+  "idTapa": 3,
+  "cantidadTapa": 1,
+  "idProveedor": null,
+  "sumaResta": "RESTA",
+  "fechaDia": "2025-12-19"
 }]

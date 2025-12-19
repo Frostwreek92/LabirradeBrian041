@@ -1,7 +1,7 @@
 [
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc251"
+    "$oid": "694539da6806af535f8ae170"
   },
   "tipo": "Stout",
   "precio": 5.5,
@@ -9,12 +9,13 @@
   "color": "Rubi oscuro",
   "puntuacion": 8.7,
   "origen": "Dublin - Irlanda",
+  "cantidad": 6,
   "graduacion": 5.6,
   "nombre": "Guinness"
 },
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc252"
+    "$oid": "694539da6806af535f8ae171"
   },
   "tipo": "Marzenbier",
   "precio": 5.5,
@@ -22,12 +23,13 @@
   "color": "Roble",
   "puntuacion": 7.3,
   "origen": "Barcelona - España",
+  "cantidad": 7,
   "graduacion": 7.2,
   "nombre": "Voll Damm"
 },
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc253"
+    "$oid": "694539da6806af535f8ae172"
   },
   "tipo": "Weissbier",
   "precio": 5.5,
@@ -35,12 +37,13 @@
   "color": "Anaranjado",
   "puntuacion": 6.5,
   "origen": "Alemania",
+  "cantidad": 7,
   "graduacion": 5,
-  "nombre": "Kranziskaner"
+  "nombre": "Franziskaner"
 },
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc254"
+    "$oid": "694539da6806af535f8ae173"
   },
   "tipo": "Pale Lager",
   "precio": 5.5,
@@ -48,12 +51,13 @@
   "color": "Verde",
   "puntuacion": 3.2,
   "origen": "Paises Bajos",
+  "cantidad": 5,
   "graduacion": 5,
   "nombre": "Heineken"
 },
 {
   "_id": {
-    "$oid": "694523b3967d483f92dfc255"
+    "$oid": "694539da6806af535f8ae174"
   },
   "tipo": "Lager",
   "precio": 5.5,
@@ -61,6 +65,7 @@
   "color": "Dorado pálido",
   "puntuacion": 2.1,
   "origen": "America",
+  "cantidad": 3,
   "graduacion": 4.8,
   "nombre": "Budweiser"
 }]
